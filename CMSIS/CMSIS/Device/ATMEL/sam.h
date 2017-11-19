@@ -33,6 +33,60 @@
 
 /*
  * ----------------------------------------------------------------------------
+ * SAMD51 family. These are not included in the SAMD or SAMD_SERIES defines
+ * ----------------------------------------------------------------------------
+ */
+
+/* SAMD51 series */
+#define SAMD51G18 ( \
+    part_is_defined( SAMD51G18A ) )
+
+#define SAMD51G19 ( \
+    part_is_defined( SAMD51G19A ) )
+
+#define SAMD51J18 ( \
+    part_is_defined( SAMD51J18A ) )
+
+#define SAMD51J19 ( \
+    part_is_defined( SAMD51J19A ) )
+
+#define SAMD51J20 ( \
+    part_is_defined( SAMD51J20A ) )
+
+#define SAMD51N19 ( \
+    part_is_defined( SAMD51N19A ) )
+
+#define SAMD51N20 ( \
+    part_is_defined( SAMD51N20A ) )
+
+#define SAMD51P19 ( \
+    part_is_defined( SAMD51P19A ) )
+
+#define SAMD51P20 ( \
+    part_is_defined( SAMD51P20A ) )
+
+/* Entire SAMD51G series */
+#define SAMD51G_SERIES (SAMD51G18 || SAMD51G19)
+#define SAMD51G SAMD51G_SERIES
+
+/* Entire SAMD51J series */
+#define SAMD51J_SERIES (SAMD51J18 || SAMD51J19 || SAMD51J20)
+#define SAMD51J SAMD51J_SERIES
+
+/* Entire SAMD51N series */
+#define SAMD51N_SERIES (SAMD51N19 || SAMD51N20)
+#define SAMD51N SAMD51N_SERIES
+
+/* Entire SAMD51P series */
+#define SAMD51P_SERIES (SAMD51P19 || SAMD51P20)
+#define SAMD51P SAMD51P_SERIES
+
+/* Entire SAMD51 series */
+#define SAMD51_SERIES (SAMD51G18 || SAMD51G19 || SAMD51J18 || SAMD51J19 || SAMD51J20 || SAMD51N19 || SAMD51N20 || SAMD51P19 || SAMD51P20)
+#define SAMD51  SAMD51_SERIES
+
+/*
+ * ----------------------------------------------------------------------------
  * SAML family
  * ----------------------------------------------------------------------------
  */
@@ -249,7 +303,7 @@
  * ----------------------------------------------------------------------------
  */
 
-#define SAM (SAML_SERIES || SAMD_SERIES || SAMC_SERIES)
+#define SAM (SAML_SERIES || SAMD_SERIES || SAMC_SERIES || SAMD51_SERIES)
 
 /*
  * ----------------------------------------------------------------------------
@@ -272,5 +326,9 @@
 #if SAMD11_SERIES
 #include "samd11/include/samd11.h"
 #endif /* SAMD11_SERIES */
+
+#if SAMD51_SERIES
+#include "samd51/include/samd51.h"
+#endif /* SAMD51_SERIES */
 
 #endif

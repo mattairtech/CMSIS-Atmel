@@ -1,5 +1,8 @@
 # CMSIS-Atmel
 
+* 10/10/2017: Added SAMD51 support. Downloaded Atmel.SAMD51_DFP.1.0.70.atpack file from http://packs.download.atmel.com/.
+* Note that in sam.h, the SAMD51 definitions are not included in the SAMD or SAMD_SERIES defines
+
 * Register definitions for the SAMD21, SAMD11, SAML21, and SAMC21 (vendor portion of CMSIS)
 * From Atmel ASF 3.32
 * Added defines to sam.h to help with conditional compilation of code based on mcu
